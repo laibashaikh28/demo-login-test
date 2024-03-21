@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace LoginDemo.Features
+namespace LoginDemo
 {
     using TechTalk.SpecFlow;
     using System;
@@ -40,7 +40,7 @@ namespace LoginDemo.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "Login", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
 Simple calculator for adding **two** numbers
 
 Link to a feature: [Calculator](LoginDemo/Features/Calculator.feature)

@@ -10,7 +10,8 @@
         "dependencies": {
           "FluentAssertions": "6.2.0",
           "Microsoft.NET.Test.Sdk": "17.0.0",
-          "Selenium.WebDriver": "4.6.0",
+          "Selenium.WebDriver": "4.18.1",
+          "Selenium.WebDriver.ChromeDriver": "123.0.6312.5800",
           "SpecFlow": "3.9.74",
           "SpecFlow.Assist.Dynamic": "1.4.2",
           "SpecFlow.Plus.LivingDocPlugin": "3.9.57",
@@ -479,17 +480,18 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
-      "Selenium.WebDriver/4.6.0": {
+      "Selenium.WebDriver/4.18.1": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
-          "lib/netstandard2.1/WebDriver.dll": {
+          "lib/netstandard2.0/WebDriver.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.0.0.0"
           }
         }
       },
+      "Selenium.WebDriver.ChromeDriver/123.0.6312.5800": {},
       "SpecFlow/3.9.74": {
         "dependencies": {
           "BoDi": "1.5.0",
@@ -1523,12 +1525,19 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.2",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512"
     },
-    "Selenium.WebDriver/4.6.0": {
+    "Selenium.WebDriver/4.18.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wdkzNyVYvdI0YOeScP42ubshPOjY7dj8aXHyetlhVTqKo5gAbYnOJU//W5q0hVSVw4hsisNvgR/UQqPvgM8rew==",
-      "path": "selenium.webdriver/4.6.0",
-      "hashPath": "selenium.webdriver.4.6.0.nupkg.sha512"
+      "sha512": "sha512-x9Pkz+kzcZ6dToJFLiem36pp0xmIfu/DXFf3U7EaoFqdtYyLsDJB0e/v58NAghcPTrAwJMSduEAokBRFFCxAxg==",
+      "path": "selenium.webdriver/4.18.1",
+      "hashPath": "selenium.webdriver.4.18.1.nupkg.sha512"
+    },
+    "Selenium.WebDriver.ChromeDriver/123.0.6312.5800": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ACz00kmOxA6TT0bPE8vgvEsstO5CIA0cA+KG4EYBKFP2/KPMee8doGlINVK9NByJ5zkH0Z6pff6m3UNgZPH1Aw==",
+      "path": "selenium.webdriver.chromedriver/123.0.6312.5800",
+      "hashPath": "selenium.webdriver.chromedriver.123.0.6312.5800.nupkg.sha512"
     },
     "SpecFlow/3.9.74": {
       "type": "package",
