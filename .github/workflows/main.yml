@@ -16,7 +16,7 @@ jobs:
           dotnet-version: '3.1'
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 120
+          chrome-version: 122
       
       - name: Install Chrome and Chrome WebDriver
         run: |
