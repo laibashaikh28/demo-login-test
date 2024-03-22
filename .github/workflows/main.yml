@@ -20,9 +20,7 @@ jobs:
           sudo apt update
           sudo apt install -y google-chrome-stable
           sudo apt install -y chromium-chromedriver
-          dotnet add package Selenium.WebDriver
-          dotnet add package Selenium.WebDriver.ChromeDriver
-
+          
       - name: Run SpecFlow tests
         run: |
           export CHROME_BIN=/usr/bin/google-chrome
