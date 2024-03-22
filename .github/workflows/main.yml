@@ -21,12 +21,9 @@ jobs:
           sudo apt install -y google-chrome-stable
           sudo apt install -y chromium-chromedriver
           
-      
-      # Set CHROME_BIN environment variable to specify Chrome binary location
-      - name: Set Chrome binary location
-        run: |
-          echo "export CHROME_BIN=/usr/bin/google-chrome-stable" >> $GITHUB_ENV
-
+      - uses: browser-actions/setup-chrome@latest
+      - run: chrome --version
+    
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           browser: chrome
