@@ -15,11 +15,10 @@ jobs:
         with:
           dotnet-version: '3.1'
           
-      - name: Install Google Chrome
-        uses: montudor/chrome-webstore-download@v1
+      
+      - uses: browser-actions/setup-chrome@v1
         with:
-          extension-id: 'google-chrome'
-          path: c:\temp\chrome
+          chrome-version: 123
 
       - name: Add Chrome to PATH
         run: |
