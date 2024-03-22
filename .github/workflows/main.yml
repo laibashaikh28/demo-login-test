@@ -26,7 +26,6 @@ jobs:
     
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
-          browser: chrome
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
           test-assembly-dll: LoginDemo.dll
           test-execution-json: TestExecution.json
