@@ -14,15 +14,15 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '3.1'
-
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 120
+      
       - name: Install Chrome and Chrome WebDriver
         run: |
           sudo apt update
           sudo apt install -y google-chrome-stable
-          sudo apt install -y chromium-chromedriver
-          
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
+          sudo apt install -y chromium-chromedriver      
     
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
