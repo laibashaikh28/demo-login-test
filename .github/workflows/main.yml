@@ -14,7 +14,15 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '3.1'
-      
+          
+      - name: Download and Install Google Chrome
+        run: |
+          $VERSION_STRING="123.0.6312.59"
+          $ARCH="64" # Assuming you want the 64-bit version, modify if needed
+          $FILENAME="google-chrome-stable-$VERSION_STRING.exe"
+          $URL="https://dl.google.com/chrome/install/$VERSION_STRING/$FILENAME"
+          Invoke-WebRequest -Uri $URL -OutFile $FILENAME
+          Start-Process -FilePath $FILENAME -ArgumentList "/silent", "/install" -Wait
 
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
