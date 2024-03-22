@@ -14,16 +14,21 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '3.1'
-      - uses: browser-actions/setup-chrome@v1
+          
+      - name: Install Google Chrome
+        uses: montudor/chrome-webstore-download@v1
         with:
-          chrome-version: 122
-      
-      - name: Install Chrome and Chrome WebDriver
+          extension-id: 'google-chrome'
+          path: c:\temp\chrome
+
+      - name: Add Chrome to PATH
         run: |
-          sudo apt update
-          sudo apt install -y google-chrome-stable
-          sudo apt install -y chromium-chromedriver      
-    
+          echo "::add-path::C:\\temp\\chrome"
+
+      - name: Install Chrome WebDriver
+        run: |
+          choco install chromedriver
+          
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
