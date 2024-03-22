@@ -20,15 +20,7 @@ jobs:
           sudo apt update
           sudo apt install -y google-chrome-stable
           sudo apt install -y chromium-chromedriver
-
-      - name: Install SpecFlow dependencies
-        run: |
-          dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
-          dotnet add package SpecFlow
-          dotnet add package SpecFlow.Tools.MsBuild.Generation
-          dotnet add package Selenium.WebDriver
-          dotnet add package Selenium.WebDriver.ChromeDriver
-
+          
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           browser: chrome
