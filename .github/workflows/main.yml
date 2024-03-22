@@ -21,6 +21,7 @@ jobs:
           sudo apt install -y google-chrome-stable
           sudo apt install -y chromium-chromedriver
           
+      
       # Set CHROME_BIN environment variable to specify Chrome binary location
       - name: Set Chrome binary location
         run: |
