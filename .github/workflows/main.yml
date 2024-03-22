@@ -19,7 +19,7 @@ jobs:
 
       - name: Install chromedriver
         run: |
-          choco install chromedriver --version=122 --pre 
+          choco install chromedriver
           
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
