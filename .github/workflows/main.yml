@@ -26,10 +26,6 @@ jobs:
       - name: List downloaded files
         run: dir
 
-      - name: Check if the installer is downloaded
-        run: |
-          if not exist "chromium_installer.exe" exit 1
-
       - name: Install Chromium
         run: |
           .\chromium_installer.exe --install --silent --force-installation --verbose
