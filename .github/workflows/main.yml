@@ -18,11 +18,13 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: '123.0.6312.58'
+      - run: |
+          ${{ steps.setup-chrome.outputs.chrome-path }} --version
 
       - name: Check Chrome version
         run: (Get-Item "C:\Program Files\Google\Chrome\Application\chrome.exe").VersionInfo.ProductVersion
 
-      - name: Check Chrome version
+      - name: Check Chrome driver version
         run: chromedriver --version
         
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
