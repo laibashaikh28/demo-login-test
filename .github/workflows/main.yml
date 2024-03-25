@@ -18,7 +18,13 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: '123.0.6312.58'
-
+      
+      - name: Check Chrome version
+        shell: powershell
+        run: |
+          $chromeVersion = (Get-Item "C:\Program Files\Google\Chrome\Application\chrome.exe").VersionInfo.ProductVersion
+          Write-Output "Chrome version: $chromeVersion"
+      
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
