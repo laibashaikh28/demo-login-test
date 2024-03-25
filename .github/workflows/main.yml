@@ -15,9 +15,7 @@ jobs:
         with:
           dotnet-version: '3.1'
           
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: '123.0.6312.58'
+      - uses: browser-actions/setup-chrome@latest
           
       - name: Check Chromium version
         run: (Get-Item "C:\hostedtoolcache\windows\chromium\123.0.6312.58\x64\chrome.exe").VersionInfo.ProductVersion
