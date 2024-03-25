@@ -18,24 +18,6 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: '123.0.6312.58'
-          
-      - name: Download Chromium installer
-        run: |
-          curl -L -o chromium_installer.exe "https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Win_x64%2F831299%2Fmini_installer.exe?alt=media"
-
-      - name: List downloaded files
-        run: dir
-
-      - name: Install Chromium
-        run: |
-          .\chromium_installer.exe --install --silent --force-installation --verbose
-
-      - name: Check Chromium installation
-        run: |
-          "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
-
-      - name: Check Chrome driver version
-        run: chromedriver --version
         
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
