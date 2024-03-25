@@ -24,7 +24,7 @@ jobs:
         with:
       # Optional: do not specify to match Chrome's version
          chromedriver-version: '122.0.6261.94'
-      - run: chromedriver --url-base=/wd/hub &
+      - run: chromedriver --version
 
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
