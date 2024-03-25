@@ -19,6 +19,13 @@ jobs:
         with:
           chrome-version: '123.0.6312.58'
 
+      - name: Check Chrome version
+        run: |
+          "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
+
+      - name: Check Chrome driver version
+        run: chrome-driver --version
+        
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
