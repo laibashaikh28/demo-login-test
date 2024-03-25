@@ -20,10 +20,10 @@ jobs:
           chrome-version: '123.0.6312.58'
 
       - name: Check Chrome version
-        run: chrome --version
+        run: cmd /c "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
 
       - name: Check Chrome driver version
-        run: chrome-driver --version
+        run: chromedriver --version
         
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
