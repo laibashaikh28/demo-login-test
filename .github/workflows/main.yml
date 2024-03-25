@@ -17,7 +17,7 @@ jobs:
           
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: '123.0.6312.58'
+          chrome-version: 'stable'
       - run: |
           ${{ steps.setup-chrome.outputs.chrome-path }} --version
 
