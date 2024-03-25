@@ -15,14 +15,16 @@ jobs:
         with:
           dotnet-version: '3.1'
           
-      - name: Download and Install Google Chrome
-        run: |
-          $VERSION_STRING="123.0.6312.59"
-          $ARCH="64" # Assuming you want the 64-bit version, modify if needed
-          $FILENAME="google-chrome-stable-$VERSION_STRING.exe"
-          $URL="https://dl.google.com/chrome/install/$VERSION_STRING/google-chrome-stable_current_x64.exe"
-          Invoke-WebRequest -Uri $URL -OutFile $FILENAME
-          Start-Process -FilePath $FILENAME -ArgumentList "/silent", "/install" -Wait
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 121
+
+      - uses: actions/checkout@v2
+      - uses: nanasess/setup-chromedriver@v2
+        with:
+      # Optional: do not specify to match Chrome's version
+         chromedriver-version: '121'
+      - run: chromedriver --url-base=/wd/hub &
 
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
