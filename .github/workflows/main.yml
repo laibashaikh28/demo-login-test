@@ -17,14 +17,7 @@ jobs:
           
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: '122.0.6261.69'
-
-      - uses: actions/checkout@v2
-      - uses: nanasess/setup-chromedriver@v2
-        with:
-      # Optional: do not specify to match Chrome's version
-         chromedriver-version: '122.0.6261.94'
-      - run: chromedriver --version
+          chrome-version: '123.0.6312.58'
 
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
