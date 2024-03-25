@@ -17,7 +17,7 @@ jobs:
           
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 'stable'
+          chrome-version: '123.0.6312.58'
 
       - name: Check Chrome version
         run: (Get-Item "C:\Program Files\Google\Chrome\Application\chrome.exe").VersionInfo.ProductVersion
