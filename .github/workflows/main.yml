@@ -20,8 +20,7 @@ jobs:
           chrome-version: '123.0.6312.58'
 
       - name: Check Chrome version
-        run: |
-          "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
+        run: chrome --version
 
       - name: Check Chrome driver version
         run: chrome-driver --version
