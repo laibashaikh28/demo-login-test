@@ -15,13 +15,25 @@ jobs:
         with:
           dotnet-version: '3.1'
           
-      - uses: browser-actions/setup-chrome@latest
+      # - uses: browser-actions/setup-chrome@latest
         
-      - name: Check Chrome version
-        run: (Get-Item "C:\Program Files\Google\Chrome\Application\chrome.exe").VersionInfo.ProductVersion
+      - name: Get Chromium version 🌐
+        # https://github.com/GoogleChromeLabs/chrome-for-testing?tab=readme-ov-file#other-api-endpoints
+        run: |
+          CHROMIUM_VERSION=$(wget -qO- https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE | cut -d. -f1)
+          echo "Chromium version: $CHROMIUM_VERSION"
+          echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> $GITHUB_ENV
+      - name: Setup Chrome 🌐
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: ${{ env.CHROMIUM_VERSION }}
+      - name: Install chromedriver 🚗
+        run: |
+          npm install -g chromedriver@$CHROMIUM_VERSION
 
-      - name: Check Chrome driver version
-        run: chromedriver --version
+      # - name: Check Chrome driver version
+      #   run: chromedriver --version
         
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
