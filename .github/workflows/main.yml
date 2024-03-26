@@ -20,9 +20,9 @@ jobs:
       - name: Get Chromium version 🌐
         # https://github.com/GoogleChromeLabs/chrome-for-testing?tab=readme-ov-file#other-api-endpoints
         run: |
-          $CHROMIUM_VERSION = (Invoke-WebRequest -Uri 'https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE').Content -replace '\..*'
+          CHROMIUM_VERSION=$(wget -qO- https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE | awk -F '.' '{print $1}')
           echo "Chromium version: $CHROMIUM_VERSION"
-          echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> $env:GITHUB_ENV
+          echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> $GITHUB_ENV
 
       - name: Echo Chromium version
         run: echo "Chromium version:$env:CHROMIUM_VERSION"
