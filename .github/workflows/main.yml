@@ -25,7 +25,7 @@ jobs:
           echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> "$GITHUB_ENV"
 
       - name: Echo Chromium version
-        run: echo "$CHROMIUM_VERSION"
+        run:  printf '%s\n' "$CHROMIUM_VERSION"
         
       - name: Setup Chrome 🌐
         id: setup-chrome
