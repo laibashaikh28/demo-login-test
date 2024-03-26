@@ -32,8 +32,8 @@ jobs:
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: ${{ env.CHROMIUM_VERSION }}
+          
       - name: Install chromedriver 🚗
-      - uses: actions/checkout@v2
       - uses: nanasess/setup-chromedriver@v2
         with:
           # Optional: do not specify to match Chrome's version
