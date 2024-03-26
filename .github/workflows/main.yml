@@ -38,7 +38,6 @@ jobs:
         with:
           # Optional: do not specify to match Chrome's version
           chromedriver-version: ${{env.CHROMIUM_VERSION}}
-          run: chromedriver --url-base=/wd/hub &
             
 
       # - name: Check Chrome driver version
