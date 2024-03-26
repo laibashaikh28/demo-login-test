@@ -34,7 +34,7 @@ jobs:
           chrome-version: ${{ env.CHROMIUM_VERSION }}
       - name: Install chromedriver 🚗
         run: |
-          npm install -g chromedriver@${{ env.CHROMIUM_VERSION }}
+          npm install -g chromedriver@latest
       
 
       # - name: Check Chrome driver version
