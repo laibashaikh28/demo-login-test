@@ -25,8 +25,12 @@ namespace LoginDemo.Steps
         [Given(@"user is at the Login page")]
         public void GivenUserIsAtTheLoginPage()
         {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--headless");
+            options.AddArgument("--disable-gpu");
 
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
+           
             //Launch the Online Store Website
             driver.Url = "https://demoqa.com/login";
         }
