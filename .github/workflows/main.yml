@@ -8,42 +8,26 @@ on:
 
 jobs:     
   specflowtests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '3.1'
-          
-      # - uses: browser-actions/setup-chrome@latest
-        
-      # - name: Get Chromium version 🌐
-      #   # https://github.com/GoogleChromeLabs/chrome-for-testing?tab=readme-ov-file#other-api-endpoints
-      #   run: |
-      #     $CHROMIUM_VERSION = (Invoke-WebRequest -Uri 'https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE').Content -split '\.' | Select-Object -First 1
-      #     echo "Chromium version: $CHROMIUM_VERSION"
-      #     echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> "$GITHUB_ENV"
 
-      # - name: Echo Chromium version
-      #   run:  echo "value is:${{env.CHROMIUM_VERSION}}"
-        
-      # - name: Setup Chrome 🌐
-      #   id: setup-chrome
-      #   uses: browser-actions/setup-chrome@v1
-      #   with:
-      #     chrome-version: '123.0.6312.86'
-          
-      # - name: Install chromedriver 🚗
-      #   uses: nanasess/setup-chromedriver@v2
-      # - run: chromedriver --url-base=/wd/hub &
-        # with:
-          # # Optional: do not specify to match Chrome's version
-          # chromedriver-version: ${{env.CHROMIUM_VERSION}}
-            
+      - uses: actions/checkout@v2
+      - uses: nanasess/setup-chromedriver@v2
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
 
-      - name: Check Chrome driver version
+      - name: Check Chrome version
+        run: google-chrome --version
+
+      - name: Check ChromeDriver version
         run: chromedriver --version
-        
+      
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
