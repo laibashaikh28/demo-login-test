@@ -31,7 +31,7 @@ jobs:
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: '123.0.6312.58'
+          chrome-version: '123.0.6312.86'
           
       # - name: Install chromedriver 🚗
       #   uses: nanasess/setup-chromedriver@v2
