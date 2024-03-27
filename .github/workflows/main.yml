@@ -27,21 +27,22 @@ jobs:
       # - name: Echo Chromium version
       #   run:  echo "value is:${{env.CHROMIUM_VERSION}}"
         
-      - name: Setup Chrome 🌐
-        id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: '123.0.6312.86'
-          
-      # - name: Install chromedriver 🚗
-      #   uses: nanasess/setup-chromedriver@v2
+      # - name: Setup Chrome 🌐
+      #   id: setup-chrome
+      #   uses: browser-actions/setup-chrome@v1
       #   with:
-      #     # Optional: do not specify to match Chrome's version
-      #     chromedriver-version: ${{env.CHROMIUM_VERSION}}
+      #     chrome-version: '123.0.6312.86'
+          
+      - name: Install chromedriver 🚗
+        uses: nanasess/setup-chromedriver@v2
+      - run: chromedriver --url-base=/wd/hub &
+        # with:
+          # # Optional: do not specify to match Chrome's version
+          # chromedriver-version: ${{env.CHROMIUM_VERSION}}
             
 
-      # - name: Check Chrome driver version
-      #   run: chromedriver --version
+      - name: Check Chrome driver version
+        run: chromedriver --version
         
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
