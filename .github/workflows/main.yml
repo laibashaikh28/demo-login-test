@@ -33,9 +33,9 @@ jobs:
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
           test-assembly-dll: LoginDemo.dll
           test-execution-json: TestExecution.json
-          output-html: MyTestResults.html
-          logger: trx
-          logger-file-name: MyTestResults.trx
+          # output-html: MyTestResults.html
+          # logger: trx
+          # logger-file-name: MyTestResults.trx
           
       - name: Configure Git
         run: |
