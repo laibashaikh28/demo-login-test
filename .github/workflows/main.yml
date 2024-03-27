@@ -15,7 +15,6 @@ jobs:
         with:
           dotnet-version: '3.1'
 
-      - name: install chrome driver
       - uses: actions/checkout@v2
       - uses: nanasess/setup-chromedriver@v2
       - run: |
