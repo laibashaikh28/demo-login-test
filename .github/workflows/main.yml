@@ -8,11 +8,6 @@ on:
 
 jobs:
   specflow:
-  # build:
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,19 +15,6 @@ jobs:
         with:
           dotnet-version: '3.1'
 
-      # - uses: actions/checkout@v2
-      # - uses: nanasess/setup-chromedriver@v2
-      # - run: |
-      #     export DISPLAY=:99
-      #     chromedriver --url-base=/wd/hub &
-      #     sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-
-      # - name: Check Chrome version
-      #   run: google-chrome --version
-
-      # - name: Check ChromeDriver version
-      #   run: chromedriver --version
-      
       - uses: cryptic-wizard/run-specflow-tests@v1.3.3
         with:
           test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
