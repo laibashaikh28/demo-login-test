@@ -45,7 +45,7 @@ jobs:
           ref: main
 
       - name: Copy DLL to Release Repo
-        run: cp ./../publish/LoginDemo.dll .
+        run: cp ${{GITHUB_WORKSPACE}}/publish/LoginDemo.dll .
 
 
       # - name: Install surge
