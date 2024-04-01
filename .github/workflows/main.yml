@@ -40,7 +40,7 @@ jobs:
           git add -A
           git commit -m "commit message"
           git push origin master
-          git tag -a 1.0.1 -m "Initial realease version 1.0.1"
+          # git tag -a 1.0.1 -m "Initial realease version 1.0.1"
           git push origin 1.0.1
 
       - name: Checkout Release Repo
