@@ -45,11 +45,11 @@ jobs:
           ref: main
           
       - name: Print current directory
-        run: ls /home/runner/work/demo-login-test/publish/
+        run: sudo ls /home/runner/work/demo-login-test/demo-login-test/publish/
 
         
       - name: Copy DLL to Release Repo
-        run: cp /home/runner/work/demo-login-test/publish/LoginDemo.dll .
+        run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
 
 
       # - name: Install surge
