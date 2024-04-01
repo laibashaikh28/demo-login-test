@@ -23,7 +23,15 @@ jobs:
    
       - name: Run tests
         run: dotnet test --logger "trx;LogFileName=TestResults.html"
+        
+      - name: Publish
+        run: dotnet publish LoginDemo/LoginDemo.csproj -c Release -o release — nologo
 
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Application_Artifact
+          path: /home/runner/work/LoginDemo/LoginDemo/release/
       # - uses: cryptic-wizard/run-specflow-tests@v1.3.3
       #   with:
       #     test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
