@@ -45,7 +45,8 @@ jobs:
           ref: main
           
       - name: Print current directory
-        run: pwd
+        run: ls /home/runner/work/demo-login-test/demo-login-test/publish/
+
         
       - name: Copy DLL to Release Repo
         run: cp ${{ github.workspace }}/publish/LoginDemo.dll .
