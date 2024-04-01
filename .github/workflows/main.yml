@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Specflow_Artifact
-          path: /home/runner/work/demo-login-test/demo-login-test/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll
+          path: ${{ github.workspace }}/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll
           
       - name: Configure Git
         run: |
@@ -53,7 +53,7 @@ jobs:
       - name: Copy files to release
         run: |
           mkdir -p automation
-          cp -r ${{ github.workspace }}/demo-login-test/artifacts ${{ github.workspace }}/automation
+          cp -r ${{ github.workspace }}/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll ${{ github.workspace }}/automation
 
       - name: Commit changes to release
         run: |
