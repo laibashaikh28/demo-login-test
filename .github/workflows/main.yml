@@ -44,9 +44,9 @@ jobs:
       - name: Push changes
         run: git push
 
-      - name: Install surge
-        run: npm install --global surge
-      - name: Copy html report surge default html file
-        run: sudo cp ./LoginDemo/TestResults/TestResults.html ./LoginDemo/TestResults/200.html
-      - name: Deploy using surge
-        run: surge ./LoginDemo/TestResults testsreport.surge.sh --token ${{ secrets.SURGE_KEY }}
+      # - name: Install surge
+      #   run: npm install --global surge
+      # - name: Copy html report surge default html file
+      #   run: sudo cp ./LoginDemo/TestResults/TestResults.html ./LoginDemo/TestResults/200.html
+      # - name: Deploy using surge
+      #   run: surge ./LoginDemo/TestResults testsreport.surge.sh --token ${{ secrets.SURGE_KEY }}
