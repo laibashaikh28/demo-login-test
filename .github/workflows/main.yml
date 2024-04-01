@@ -25,20 +25,14 @@ jobs:
         run: dotnet test --logger "trx;LogFileName=TestResults.html"
         
       - name: Publish
-        run: dotnet publish 
+        run: dotnet publish -c Release -o ./publish
 
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Specflow_Artifact
-          path: ${{ github.workspace }}/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll
+      # - name: Upload Build Artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: Specflow_Artifact
+      #     path: ${{ github.workspace }}/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll
           
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: Specflow_Artifact
-          path: ./artifacts
-      
       - name: Configure Git
         run: |
           git config --global user.email "laibaovais05@gmail.com"
@@ -46,8 +40,8 @@ jobs:
           git add -A
           git commit -m "commit message"
           git push origin master
-          git tag 1.0.11
-          git push origin 1.0.11
+          git tag 1.0.13
+          git push origin 1.0.13
 
       - name: Checkout Release Repo
         uses: actions/checkout@v4
@@ -59,7 +53,7 @@ jobs:
       - name: Copy files to release
         run: |
           mkdir -p automation
-          cp -r cp -r ./artifacts/* ${{ github.workspace }}/target/artifacts/
+          cp -r./publish/LoginDemo.dll laibashaikh28/release-specflow/1.0.13
 
       - name: Commit changes to release
         run: |
