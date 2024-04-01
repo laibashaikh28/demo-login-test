@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --global user.email "laibaovais05@gmail.com"
           git config --global user.name "laibashaikh28"
-          git add ./publish/LoginDemo.dll
+          git add -f ./publish/LoginDemo.dll
           git commit -m "Update LoginDemo.dll"
           git push origin master
 
