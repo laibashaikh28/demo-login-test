@@ -53,8 +53,8 @@ jobs:
       - name: Copy files to release
         run: |
           rm -r ${{ github.workspace }}/target/demo-login-test
-          mkdir -p target/URBE
-          cp -r ${{ github.workspace }}/demo-login-test/artifacts ${{ github.workspace }}/target/demo-login-test
+          mkdir -p target/Automation
+          cp -r ${{ github.workspace }}/demo-login-test/artifacts ${{ github.workspace }}/target/Automation
 
       - name: Commit changes to release
         run: |
