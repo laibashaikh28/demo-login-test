@@ -48,7 +48,7 @@ jobs:
         with:
           repository: laibashaikh28/release-specflow
           token: ${{ secrets.ACTIONS_TOKEN }}
-          path: target
+          path: target/master
 
       - name: Copy files to release
         run: |
@@ -63,7 +63,7 @@ jobs:
           git config --global user.name "laibashaikh28"
           git add .
           git commit -m "Add newly generated artifacts and config files." || true
-          git push origin main --force
+          git push origin master --force
 
       # - name: Install surge
       #   run: npm install --global surge
