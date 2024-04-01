@@ -13,16 +13,25 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '3.1'
+          dotnet-version: '6.0.x'
+          
+      - name: Restore dependencies
+        run: dotnet restore
+          
+      - name: Build solution
+        run: dotnet build --configuration Release
+   
+      - name: Run tests
+        run: dotnet test --logger "trx;LogFileName=TestResults.html"
 
-      - uses: cryptic-wizard/run-specflow-tests@v1.3.3
-        with:
-          test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
-          test-assembly-dll: LoginDemo.dll
-          test-execution-json: TestExecution.json
-          output-html: TestResults.html
-          logger: trx
-          logger-file-name: MyTestResults.trx
+      # - uses: cryptic-wizard/run-specflow-tests@v1.3.3
+      #   with:
+      #     test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
+      #     test-assembly-dll: LoginDemo.dll
+      #     test-execution-json: TestExecution.json
+      #     output-html: TestResults.html
+      #     logger: trx
+      #     logger-file-name: MyTestResults.trx
           
       - name: Configure Git
         run: |
