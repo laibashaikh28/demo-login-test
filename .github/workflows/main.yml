@@ -37,12 +37,33 @@ jobs:
         run: |
           git config --global user.name "laibaovais05@gmail.com"
           git config --global user.name "laibashaikh28"
-      - name: Add changes
-        run: git add -A
-      - name: Commit changes
-        run: git commit -m "commit message"
-      - name: Push changes
-        run: git push
+          git add -A
+          git commit -m "commit message"
+          git push origin master
+          git tag -a 1.0.1 -m "Initial realease version 1.0.1"
+          git push origin 1.0.1
+
+      - name: Checkout Release Repo
+        uses: actions/checkout@v3
+        with:
+          repository: laibashaikh28/release
+          token: ${{ secrets.ACTIONS_TOKEN }}
+          path: target
+
+      - name: Copy files to release
+        run: |
+          rm -r ${{ github.workspace }}/target/demo-login-test
+          mkdir -p target/URBE
+          cp -r ${{ github.workspace }}/demo-login-test/artifacts ${{ github.workspace }}/target/demo-login-test
+
+      - name: Commit changes to release
+        run: |
+          cd target
+          git config --global user.name "laibaovais05@gmail.com"
+          git config --global user.name "laibashaikh28"
+          git add .
+          git commit -m "Add newly generated artifacts and config files." || true
+          git push origin main --force
 
       # - name: Install surge
       #   run: npm install --global surge
