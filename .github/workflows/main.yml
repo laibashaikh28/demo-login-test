@@ -40,8 +40,8 @@ jobs:
           git add -A
           git commit -m "commit message"
           git push origin master
-          git tag 1.0.8
-          git push origin 1.0.8
+          git tag 1.0.9
+          git push origin 1.0.9
 
       - name: Checkout Release Repo
         uses: actions/checkout@v4
