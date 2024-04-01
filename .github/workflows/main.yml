@@ -40,13 +40,13 @@ jobs:
           git add -A
           git commit -m "commit message"
           git push origin master
-          git tag 1.0.3
-          git push origin 1.0.3
+          git tag 1.0.4
+          git push origin 1.0.4
 
       - name: Checkout Release Repo
         uses: actions/checkout@v3
         with:
-          repository: laibashaikh28/release
+          repository: laibashaikh28/release-specflow
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: target
 
