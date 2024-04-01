@@ -40,8 +40,8 @@ jobs:
           git add -A
           git commit -m "commit message"
           git push origin master
-          git tag 1.0.9
-          git push origin 1.0.9
+          git tag 1.0.10
+          git push origin 1.0.10
 
       - name: Checkout Release Repo
         uses: actions/checkout@v4
@@ -52,9 +52,8 @@ jobs:
 
       - name: Copy files to release
         run: |
-          rm -r ${{ github.workspace }}/target/demo-login-test
-          mkdir -p target/Automation
-          cp -r ${{ github.workspace }}/demo-login-test/artifacts ${{ github.workspace }}/target/Automation
+          mkdir -p automation
+          cp -r ${{ github.workspace }}/demo-login-test/artifacts ${{ github.workspace }}/automation
 
       - name: Commit changes to release
         run: |
