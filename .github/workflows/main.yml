@@ -33,6 +33,12 @@ jobs:
           name: Specflow_Artifact
           path: ${{ github.workspace }}/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll
           
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Specflow_Artifact
+          path: ./artifacts
+      
       - name: Configure Git
         run: |
           git config --global user.email "laibaovais05@gmail.com"
@@ -53,7 +59,7 @@ jobs:
       - name: Copy files to release
         run: |
           mkdir -p automation
-          cp -r ${{ github.workspace }}/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll ${{ github.workspace }}/automation
+          cp -r cp -r ./artifacts/* ${{ github.workspace }}/target/artifacts/
 
       - name: Commit changes to release
         run: |
