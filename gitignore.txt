@@ -1,0 +1,29 @@
+# Ignore Visual Studio temporary files, build results, and .vs directory
+.vs/
+*.obj
+*.exe
+*.pdb
+*.user
+*.iobj
+*.dll
+*.log
+*.suo
+*.cache
+*.ncrunch*
+*.csproj.user
+*.resharper
+*.[Rr]e[Ss]harper
+*.sln.docstates
+
+# Ignore NuGet packages
+packages/
+
+# Ignore SpecFlow generated files
+*.feature.cs
+*.feature.cs.jinja
+*.feature.cs.jinja.cache
+*.feature.xml
+
+# Ignore other generated files
+bin/
+obj/
