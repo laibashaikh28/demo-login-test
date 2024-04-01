@@ -63,7 +63,7 @@ jobs:
           git config --global user.name "laibashaikh28"
           git add .
           git commit -m "Add newly generated artifacts and config files." || true
-          git push origin master --force
+          git push origin main --force
 
       # - name: Install surge
       #   run: npm install --global surge
