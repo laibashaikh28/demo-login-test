@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="38a248a1-3d75-44d0-a396-73d6063c890f" name="@fv-az1432-683 2024-04-01 08:23:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2024-04-01T08:23:47.2491074+00:00" queuing="2024-04-01T08:23:47.2491075+00:00" start="2024-04-01T08:23:28.1906235+00:00" finish="2024-04-01T08:23:47.2553478+00:00" />
-  <TestSettings name="default" id="60aa59f8-7df0-4077-a3c4-d4c7c01ad6f5">
-    <Deployment runDeploymentRoot="_fv-az1432-683_2024-04-01_08_23_47" />
+<TestRun id="7c582a5b-fb22-416f-9dc3-d8f1c9269518" name="@fv-az1152-407 2024-04-01 08:30:15" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-04-01T08:30:15.2735675+00:00" queuing="2024-04-01T08:30:15.2735675+00:00" start="2024-04-01T08:30:09.1267394+00:00" finish="2024-04-01T08:30:15.2798828+00:00" />
+  <TestSettings name="default" id="de4ef1c6-468d-47f0-8a0e-53bd81250d31">
+    <Deployment runDeploymentRoot="_fv-az1152-407_2024-04-01_08_30_15" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="50ef8e2b-c00b-4c95-9660-8b27b22e4195" testId="540651e4-0ab2-531d-5f16-714ed241afcf" testName="Successful login with valid credentials(userName: &quot;testuser_1&quot;, password: &quot;Test@123&quot;, exampleTags: [])" computerName="fv-az1432-683" duration="00:00:17.2013630" startTime="2024-04-01T08:23:47.0790220+00:00" endTime="2024-04-01T08:23:47.0790505+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50ef8e2b-c00b-4c95-9660-8b27b22e4195">
+    <UnitTestResult executionId="302fc872-20b0-46da-a32e-71a713e467e7" testId="540651e4-0ab2-531d-5f16-714ed241afcf" testName="Successful login with valid credentials(userName: &quot;testuser_1&quot;, password: &quot;Test@123&quot;, exampleTags: [])" computerName="fv-az1152-407" duration="00:00:04.7281472" startTime="2024-04-01T08:30:15.1045331+00:00" endTime="2024-04-01T08:30:15.1045594+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="302fc872-20b0-46da-a32e-71a713e467e7">
       <Output>
         <StdOut>Given user is at the Login page
--&gt; done: LoginStepDefinitions.GivenUserIsAtTheLoginPage() (15.5s)
+-&gt; done: LoginStepDefinitions.GivenUserIsAtTheLoginPage() (3.4s)
 When user enters 'testuser_1' and 'Test@123'
--&gt; done: LoginStepDefinitions.WhenUserEntersAnd("testuser_1", "Test@123") (0.5s)
+-&gt; done: LoginStepDefinitions.WhenUserEntersAnd("testuser_1", "Test@123") (0.2s)
 And user clicks the login button
--&gt; done: LoginStepDefinitions.WhenUserClicksTheLoginButton() (0.1s)
+-&gt; done: LoginStepDefinitions.WhenUserClicksTheLoginButton() (0.0s)
 Then the page should navigate to profile page
 -&gt; https://demoqa.com/profile
 -&gt; done: LoginStepDefinitions.ThenThePageShouldNavigateToProfilePage() (1.1s)</StdOut>
@@ -21,12 +21,12 @@ Then the page should navigate to profile page
   </Results>
   <TestDefinitions>
     <UnitTest name="Successful login with valid credentials(userName: &quot;testuser_1&quot;, password: &quot;Test@123&quot;, exampleTags: [])" storage="/home/runner/work/demo-login-test/demo-login-test/logindemo/bin/debug/netcoreapp3.1/logindemo.dll" id="540651e4-0ab2-531d-5f16-714ed241afcf">
-      <Execution id="50ef8e2b-c00b-4c95-9660-8b27b22e4195" />
+      <Execution id="302fc872-20b0-46da-a32e-71a713e467e7" />
       <TestMethod codeBase="/home/runner/work/demo-login-test/demo-login-test/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="LoginDemo.LoginFeature" name="SuccessfulLoginWithValidCredentials" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="540651e4-0ab2-531d-5f16-714ed241afcf" executionId="50ef8e2b-c00b-4c95-9660-8b27b22e4195" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="540651e4-0ab2-531d-5f16-714ed241afcf" executionId="302fc872-20b0-46da-a32e-71a713e467e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
@@ -36,10 +36,10 @@ Then the page should navigate to profile page
     <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <Output>
       <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.3+1b45f5407b (64-bit .NET Core 3.1.32)
-[xUnit.net 00:00:00.49]   Discovering: LoginDemo
-[xUnit.net 00:00:00.55]   Discovered:  LoginDemo
-[xUnit.net 00:00:00.55]   Starting:    LoginDemo
-[xUnit.net 00:00:18.08]   Finished:    LoginDemo
+[xUnit.net 00:00:00.48]   Discovering: LoginDemo
+[xUnit.net 00:00:00.54]   Discovered:  LoginDemo
+[xUnit.net 00:00:00.54]   Starting:    LoginDemo
+[xUnit.net 00:00:05.60]   Finished:    LoginDemo
 </StdOut>
     </Output>
   </ResultSummary>
