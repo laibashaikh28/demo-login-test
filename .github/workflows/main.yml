@@ -25,7 +25,7 @@ jobs:
         run: dotnet test --logger "trx;LogFileName=TestResults.html"
         
       - name: Publish
-        run: dotnet publish LoginDemo/LoginDemo.csproj -c Release -o release — nologo
+        run: dotnet publish 
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
