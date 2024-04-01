@@ -43,7 +43,10 @@ jobs:
           repository: laibashaikh28/release-specflow
           token: ${{ secrets.ACTIONS_TOKEN }}
           ref: main
-
+          
+      - name: Print current directory
+        run: pwd
+        
       - name: Copy DLL to Release Repo
         run: cp ${{ github.workspace }}/publish/LoginDemo.dll .
 
