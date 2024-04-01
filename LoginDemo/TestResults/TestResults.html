@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="de1acbf3-0821-4bf9-b9ec-1b2629b41e26" name="@fv-az802-296 2024-04-01 08:21:56" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2024-04-01T08:21:56.7432886+00:00" queuing="2024-04-01T08:21:56.7432887+00:00" start="2024-04-01T08:21:44.2037833+00:00" finish="2024-04-01T08:21:56.7495775+00:00" />
-  <TestSettings name="default" id="38de0b6f-0d15-4e4f-bdb7-0449f4dd7730">
-    <Deployment runDeploymentRoot="_fv-az802-296_2024-04-01_08_21_56" />
+<TestRun id="38a248a1-3d75-44d0-a396-73d6063c890f" name="@fv-az1432-683 2024-04-01 08:23:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-04-01T08:23:47.2491074+00:00" queuing="2024-04-01T08:23:47.2491075+00:00" start="2024-04-01T08:23:28.1906235+00:00" finish="2024-04-01T08:23:47.2553478+00:00" />
+  <TestSettings name="default" id="60aa59f8-7df0-4077-a3c4-d4c7c01ad6f5">
+    <Deployment runDeploymentRoot="_fv-az1432-683_2024-04-01_08_23_47" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="547a1d98-fe0b-4a9b-ac03-949f1fa4a2a7" testId="540651e4-0ab2-531d-5f16-714ed241afcf" testName="Successful login with valid credentials(userName: &quot;testuser_1&quot;, password: &quot;Test@123&quot;, exampleTags: [])" computerName="fv-az802-296" duration="00:00:10.8086036" startTime="2024-04-01T08:21:56.4856637+00:00" endTime="2024-04-01T08:21:56.4856905+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="547a1d98-fe0b-4a9b-ac03-949f1fa4a2a7">
+    <UnitTestResult executionId="50ef8e2b-c00b-4c95-9660-8b27b22e4195" testId="540651e4-0ab2-531d-5f16-714ed241afcf" testName="Successful login with valid credentials(userName: &quot;testuser_1&quot;, password: &quot;Test@123&quot;, exampleTags: [])" computerName="fv-az1432-683" duration="00:00:17.2013630" startTime="2024-04-01T08:23:47.0790220+00:00" endTime="2024-04-01T08:23:47.0790505+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50ef8e2b-c00b-4c95-9660-8b27b22e4195">
       <Output>
         <StdOut>Given user is at the Login page
--&gt; done: LoginStepDefinitions.GivenUserIsAtTheLoginPage() (8.9s)
+-&gt; done: LoginStepDefinitions.GivenUserIsAtTheLoginPage() (15.5s)
 When user enters 'testuser_1' and 'Test@123'
--&gt; done: LoginStepDefinitions.WhenUserEntersAnd("testuser_1", "Test@123") (0.7s)
+-&gt; done: LoginStepDefinitions.WhenUserEntersAnd("testuser_1", "Test@123") (0.5s)
 And user clicks the login button
 -&gt; done: LoginStepDefinitions.WhenUserClicksTheLoginButton() (0.1s)
 Then the page should navigate to profile page
@@ -21,12 +21,12 @@ Then the page should navigate to profile page
   </Results>
   <TestDefinitions>
     <UnitTest name="Successful login with valid credentials(userName: &quot;testuser_1&quot;, password: &quot;Test@123&quot;, exampleTags: [])" storage="/home/runner/work/demo-login-test/demo-login-test/logindemo/bin/debug/netcoreapp3.1/logindemo.dll" id="540651e4-0ab2-531d-5f16-714ed241afcf">
-      <Execution id="547a1d98-fe0b-4a9b-ac03-949f1fa4a2a7" />
+      <Execution id="50ef8e2b-c00b-4c95-9660-8b27b22e4195" />
       <TestMethod codeBase="/home/runner/work/demo-login-test/demo-login-test/LoginDemo/bin/Debug/netcoreapp3.1/LoginDemo.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="LoginDemo.LoginFeature" name="SuccessfulLoginWithValidCredentials" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="540651e4-0ab2-531d-5f16-714ed241afcf" executionId="547a1d98-fe0b-4a9b-ac03-949f1fa4a2a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="540651e4-0ab2-531d-5f16-714ed241afcf" executionId="50ef8e2b-c00b-4c95-9660-8b27b22e4195" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
@@ -39,7 +39,7 @@ Then the page should navigate to profile page
 [xUnit.net 00:00:00.49]   Discovering: LoginDemo
 [xUnit.net 00:00:00.55]   Discovered:  LoginDemo
 [xUnit.net 00:00:00.55]   Starting:    LoginDemo
-[xUnit.net 00:00:11.77]   Finished:    LoginDemo
+[xUnit.net 00:00:18.08]   Finished:    LoginDemo
 </StdOut>
     </Output>
   </ResultSummary>
