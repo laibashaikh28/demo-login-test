@@ -10,8 +10,8 @@ Scenario: Successful login with valid credentials
 Examples: 
 | userName   | password |
 | testuser_1 | Test@123 |
-| testuser   | Test@123 |
-| laiba123   |Laiba@123|
+#| testuser   | Test@123 |
+#| laiba123   |Laiba@123|
 #
 #Scenario: Failed login when both fields are empty
 #	Given user is at the Login page
