@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Application_Artifact
-          path: /home/runner/work/LoginDemo/LoginDemo/release/
+          path: /home/runner/work/LoginDemo/bin/Debug/netcoreapp3.1/publish/
       # - uses: cryptic-wizard/run-specflow-tests@v1.3.3
       #   with:
       #     test-assembly-path: LoginDemo/bin/Debug/netcoreapp3.1
