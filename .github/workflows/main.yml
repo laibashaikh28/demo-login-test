@@ -43,10 +43,6 @@ jobs:
           repository: laibashaikh28/release-specflow
           token: ${{ secrets.ACTIONS_TOKEN }}
           ref: main
-          
-      - name: Print current directory
-        run: sudo ls /home/runner/work/demo-login-test/demo-login-test/publish/
-
         
       - name: Copy DLL to Release Repo
         run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
