@@ -37,16 +37,27 @@ jobs:
           git commit -m "Update LoginDemo.dll"
           git push origin master
 
-      - name: Checkout Release Repo
-        uses: actions/checkout@v4
-        with:
-          repository: laibashaikh28/release-specflow
-          token: ${{ secrets.ACTIONS_TOKEN }}
-          ref: main
+      # - name: Checkout Release Repo
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: laibashaikh28/release-specflow
+      #     token: ${{ secrets.ACTIONS_TOKEN }}
+      #     ref: main
         
-      - name: Copy DLL to Release Repo
-        run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
-
+      # - name: Copy DLL to Release Repo
+      #   run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
+      - name: Copy DLL to target repository
+        run: |
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/release-specflow target
+          rm -rf target/*
+          cp LoginDemo.dll target/laibashaikh/release-specflow/
+          cd target
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
+          git push target master
+        env:
+          LOGIN_DEMO_DLL: ${{ github.workspace }}/LoginDemo.dll
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Install surge
       #   run: npm install --global surge
