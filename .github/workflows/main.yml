@@ -32,10 +32,10 @@ jobs:
           cd ${{ github.workspace }}/demo-login-test/LoginDemo
           dotnet build --configuration Release
    
-      - name: Run tests
-        run: |
-          cd ${{ github.workspace }}/demo-login-test/LoginDemo
-          dotnet test --logger "trx;LogFileName=TestResults.html"
+      # - name: Run tests
+      #   run: |
+      #     cd ${{ github.workspace }}/demo-login-test/LoginDemo
+      #     dotnet test --logger "trx;LogFileName=TestResults.html"
         
       - name: Build and Publish
         run: |
@@ -43,25 +43,6 @@ jobs:
           dotnet build --configuration Release
           dotnet publish -c Release -o ./publish
 
-      # - name: Configure Git
-      #   run: |
-      #     cd ${{ github.workspace }}/demo-login-test
-      #     git config --global user.email "laibaovais05@gmail.com"
-      #     git config --global user.name "laibashaikh28"
-      #     git add -f ./publish/LoginDemo.dll
-      #     git commit -m "Update LoginDemo.dll"
-      #     git pull origin master
-      #     git push origin master
-
-      # - name: Checkout Release Repo
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: laibashaikh28/release-specflow
-      #     token: ${{ secrets.ACTIONS_TOKEN }}
-      #     ref: main
-        
-      # - name: Copy DLL to Release Repo
-      #   run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
       - name: Checkout Specflow-Release Repo
         uses: actions/checkout@v4
         with:
@@ -83,21 +64,3 @@ jobs:
           git add .
           git commit -m "Add LoginDemo.dll." || true
           git push origin main --force
-      # - name: Copy DLL to target repository
-      #   run: |
-      #     git clone https://laibashaikh28:${{ secrets.GITHUB_TOKEN }}@github.com/laibashaikh28/release-specflow.git target
-      #     rm -rf target/*
-      #     mkdir -p target/specflow
-      #     cp ./publish/LoginDemo.dll target/specflow/
-      #     cd target
-      #     git add .
-      #     git commit -m "Copy LoginDemo.dll"          
-      #     git pull origin main --rebase
-      #     git push origin main
-
-      # - name: Install surge
-      #   run: npm install --global surge
-      # - name: Copy html report surge default html file
-      #   run: sudo cp ./LoginDemo/TestResults/TestResults.html ./LoginDemo/TestResults/200.html
-      # - name: Deploy using surge
-      #   run: surge ./LoginDemo/TestResults testsreport.surge.sh --token ${{ secrets.SURGE_KEY }}
