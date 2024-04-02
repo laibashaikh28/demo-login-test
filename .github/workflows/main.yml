@@ -56,7 +56,6 @@ jobs:
           git init  # Initialize target directory as a Git repository
           git add .
           git commit -m "Copy LoginDemo.dll"
-          git remote add origin https://.:${{ secrets.GITHUB_TOKEN }}@github.com/laibashaikh28/release-specflow/
           git branch -M main
           git push -u origin main
         env:
