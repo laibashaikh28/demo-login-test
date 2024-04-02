@@ -48,7 +48,7 @@ jobs:
       #   run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
       - name: Copy DLL to target repository
         run: |
-          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/release-specflow target
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/laibashaikh28/release-specflow/ target
           rm -rf target/*
           cp LoginDemo.dll target/laibashaikh/release-specflow/
           cd target
