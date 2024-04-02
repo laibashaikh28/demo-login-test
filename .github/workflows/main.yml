@@ -53,9 +53,12 @@ jobs:
           mkdir -p target/specflow
           cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll target/specflow/
           cd target
+          git init  # Initialize target directory as a Git repository
           git add .
-          git diff-index --quiet HEAD || git commit -m "Copy LoginDemo.dll"
-          git push target main
+          git commit -m "Copy LoginDemo.dll"
+          git remote add origin https://.:${{ secrets.GITHUB_TOKEN }}@github.com/laibashaikh28/release-specflow/
+          git branch -M main
+          git push -u origin main
         env:
           LOGIN_DEMO_DLL: ${{ github.workspace }}/LoginDemo.dll
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
