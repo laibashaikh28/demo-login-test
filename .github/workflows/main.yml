@@ -24,7 +24,7 @@ jobs:
           dotnet-version: '3.1'
           
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ${{ github.workspace }}/LoginDemo/LoginDemo.csproj
           
       - name: Build solution
         run: dotnet build --configuration Release
