@@ -17,8 +17,7 @@ jobs:
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: demo-login-test
 
-      - name: Cd demo-login-test Repo
-        run: cd ${{ github.workspace }}/demo-login-test
+      - run: pwd
         
       - uses: actions/setup-dotnet@v4
         with:
