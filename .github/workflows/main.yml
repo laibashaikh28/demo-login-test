@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: demo-login-test
 
-      - run: pwd
+      - run: ls
         
       - uses: actions/setup-dotnet@v4
         with:
