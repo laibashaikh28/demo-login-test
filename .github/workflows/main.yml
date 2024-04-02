@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Checkout Specflow-Release Repo
+      - name: Checkout demo-login-test Repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: demo-login-test
-          
+
+      - name: Cd demo-login-test Repo
+        run: cd demo-login-test
+        
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '3.1'
