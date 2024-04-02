@@ -71,10 +71,10 @@ jobs:
 
       - name: Copy files to UR-Release
         run: |
-          rm -r ${{ github.workspace }}/target/demo-login-test
           mkdir -p target/demo-login-test-release
           cp -r ${{ github.workspace }}/demo-login-test/publish/LoginDemo.dll ${{ github.workspace }}/target/demo-login-test-release
-
+     #    rm -r ${{ github.workspace }}/target/demo-login-test
+     
       - name: Commit changes to UR-Release
         run: |
           cd target
