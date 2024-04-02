@@ -50,7 +50,8 @@ jobs:
         run: |
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/laibashaikh28/release-specflow/ target
           rm -rf target/*
-          cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll target/release-specflow/
+          mkdir -p target/laibashaikh/specflow
+          cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll target/specflow/
           cd target
           git add .
           git diff-index --quiet HEAD || git commit -m "Copy LoginDemo.dll"
