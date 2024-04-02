@@ -12,7 +12,7 @@ jobs:
     steps:
     
       - name: Checkout Specflow-Release Repo
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: demo-login-test
@@ -55,7 +55,7 @@ jobs:
       # - name: Copy DLL to Release Repo
       #   run: sudo cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll .
       - name: Checkout Specflow-Release Repo
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
         with:
           repository: laibashaikh28
           token: ${{ secrets.ACTIONS_TOKEN }}
