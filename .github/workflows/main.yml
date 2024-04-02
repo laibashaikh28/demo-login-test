@@ -50,10 +50,10 @@ jobs:
         run: |
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/laibashaikh28/release-specflow/ target
           rm -rf target/*
-          cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll target/laibashaikh28/release-specflow/
+          cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll target/release-specflow/
           cd target
           git add .
-          git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
+          git diff-index --quiet HEAD || git commit -m "Copy LoginDemo.dll"
           git push target master
         env:
           LOGIN_DEMO_DLL: ${{ github.workspace }}/LoginDemo.dll
