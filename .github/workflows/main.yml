@@ -24,7 +24,7 @@ jobs:
       
       - name: Restore dependencies
         run: |
-          cd ${{ github.workspace }}/LoginDemo
+          cd ${{ github.workspace }}/demo-login-test/LoginDemo
           ls
           dotnet restore 
           
