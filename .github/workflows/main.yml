@@ -59,6 +59,8 @@ jobs:
           git config user.email "laibaovais05@gmail.com"
           git add .
           git commit -m "Copy LoginDemo.dll"
+          git config pull.rebase false  # Merge
+          git pull  
           git branch -M main
           git push -u origin main
         env:
