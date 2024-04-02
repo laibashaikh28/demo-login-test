@@ -55,7 +55,7 @@ jobs:
           cd target
           git add .
           git diff-index --quiet HEAD || git commit -m "Copy LoginDemo.dll"
-          git push target master
+          git push target main
         env:
           LOGIN_DEMO_DLL: ${{ github.workspace }}/LoginDemo.dll
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
