@@ -16,9 +16,6 @@ jobs:
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: demo-login-test
-
-         
-      - run: cd ${{ github.workspace }}/demo-login-test
       
       - uses: actions/setup-dotnet@v4
         with:
@@ -26,7 +23,10 @@ jobs:
 
       
       - name: Restore dependencies
-        run: dotnet restore 
+        run: |
+          cd ${{ github.workspace }}/LoginDemo
+          ls
+          dotnet restore 
           
       - name: Build solution
         run: dotnet build --configuration Release
