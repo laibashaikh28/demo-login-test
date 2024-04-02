@@ -25,17 +25,21 @@ jobs:
       - name: Restore dependencies
         run: |
           cd ${{ github.workspace }}/demo-login-test/LoginDemo
-          ls
           dotnet restore 
           
       - name: Build solution
-        run: dotnet build --configuration Release
+        run: |
+          cd ${{ github.workspace }}/demo-login-test/LoginDemo
+          dotnet build --configuration Release
    
       - name: Run tests
-        run: dotnet test --logger "trx;LogFileName=TestResults.html"
+        run: |
+          cd ${{ github.workspace }}/demo-login-test/LoginDemo
+          dotnet test --logger "trx;LogFileName=TestResults.html"
         
       - name: Build and Publish
         run: |
+          cd ${{ github.workspace }}/demo-login-test/LoginDemo
           dotnet build --configuration Release
           dotnet publish -c Release -o ./publish
 
