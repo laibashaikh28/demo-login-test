@@ -43,15 +43,15 @@ jobs:
           dotnet build --configuration Release
           dotnet publish -c Release -o ./publish
 
-      - name: Configure Git
-        run: |
-          cd ${{ github.workspace }}/demo-login-test
-          git config --global user.email "laibaovais05@gmail.com"
-          git config --global user.name "laibashaikh28"
-          git add -f ./publish/LoginDemo.dll
-          git commit -m "Update LoginDemo.dll"
-          git pull origin master
-          git push origin master
+      # - name: Configure Git
+      #   run: |
+      #     cd ${{ github.workspace }}/demo-login-test
+      #     git config --global user.email "laibaovais05@gmail.com"
+      #     git config --global user.name "laibashaikh28"
+      #     git add -f ./publish/LoginDemo.dll
+      #     git commit -m "Update LoginDemo.dll"
+      #     git pull origin master
+      #     git push origin master
 
       # - name: Checkout Release Repo
       #   uses: actions/checkout@v4
@@ -65,7 +65,7 @@ jobs:
       - name: Checkout Specflow-Release Repo
         uses: actions/checkout@v4
         with:
-          repository: laibashaikh28
+          repository: laibashaikh28/release-specflow
           token: ${{ secrets.ACTIONS_TOKEN }}
           path: target
 
