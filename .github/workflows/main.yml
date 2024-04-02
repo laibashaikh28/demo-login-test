@@ -32,10 +32,10 @@ jobs:
           cd ${{ github.workspace }}/demo-login-test/LoginDemo
           dotnet build --configuration Release
    
-      # - name: Run tests
-      #   run: |
-      #     cd ${{ github.workspace }}/demo-login-test/LoginDemo
-      #     dotnet test --logger "trx;LogFileName=TestResults.html"
+      - name: Run tests
+        run: |
+          cd ${{ github.workspace }}/demo-login-test/LoginDemo
+          dotnet test --logger "trx;LogFileName=TestResults.html"
         
       - name: Build and Publish
         run: |
@@ -52,9 +52,10 @@ jobs:
 
       - name: Copy files to UR-Release
         run: |
+          rm -r ${{ github.workspace }}/target/demo-login-test
           mkdir -p target/demo-login-test-release
           cp -r ${{ github.workspace }}/demo-login-test/publish/LoginDemo.dll ${{ github.workspace }}/target/demo-login-test-release
-     #    rm -r ${{ github.workspace }}/target/demo-login-test
+     
      
       - name: Commit changes to UR-Release
         run: |
