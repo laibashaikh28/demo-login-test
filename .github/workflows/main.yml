@@ -55,8 +55,8 @@ jobs:
           cp /home/runner/work/demo-login-test/demo-login-test/publish/LoginDemo.dll target/specflow/
           cd target
           git init  # Initialize target directory as a Git repository
-          git config user.name "laibashaikh28"
-          git config user.email "laibaovais05@gmail.com"
+          git config --global user.email "laibaovais05@gmail.com"
+          git config --global user.name "laibashaikh28"
           git add .
           git commit -m "Copy LoginDemo.dll"          
           git branch -M main
