@@ -18,7 +18,7 @@ jobs:
           path: demo-login-test
 
       - name: Cd demo-login-test Repo
-        run: cd demo-login-test
+        run: cd ${{ github.workspace }}/demo-login-test
         
       - uses: actions/setup-dotnet@v4
         with:
